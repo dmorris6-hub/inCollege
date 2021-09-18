@@ -9,7 +9,7 @@ def isAuthorized(username, password):
     # Execute a query
     cur.execute(f"SELECT * FROM auth WHERE username='{username}' AND password='{password}';")
 
-    # Retrieve query results
+    # Retrieve query results and check if user exsists
     if(cur.fetchone() is None):
         return 0
     else:

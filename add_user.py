@@ -6,7 +6,7 @@ def canAdd():
     # Open a cursor to perform database operations
     cur = conn.cursor()
 
-    # Execute a query
+    # counts number of users
     cur.execute(f"SELECT COUNT(*) FROM auth;")
 
     response = cur.fetchall()
@@ -21,6 +21,7 @@ def addUser():
     username = input("Enter a username: ")
     password = input("Enter a password: ")
 
+    # finds out if password is allowed
     cap = False
     dig = False
     alp = False
@@ -39,7 +40,7 @@ def addUser():
         # Open a cursor to perform database operations
         cur = conn.cursor()
 
-        # Execute a query
+        # insert user info
         query = f"INSERT INTO auth (username, password) VALUES ('{username}', '{password}');"
         cur.execute(query, (username, password))
         conn.commit()

@@ -26,6 +26,7 @@ def signup():
 
 
 def main():
+    print(" ")
     print("---welcome to inCollege!---")
     print(" ")
     print("Please type 'login' to log in to your account")

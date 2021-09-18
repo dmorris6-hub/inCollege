@@ -11,4 +11,4 @@ CREATE TABLE auth (id SERIAL PRIMARY KEY, username VARCHAR(50) NOT NULL, passwor
 
 
 *To set up your python 3 environment with the necessary libraries you'll need to install the packages in the requirements.txt
-just look up 'psychpg2 install [inset your os]'
+just look up 'psycopg2 install [inset your os]'

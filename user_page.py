@@ -1,5 +1,4 @@
-
-
+from inCollege import login
 
 """
 under construction function to print
@@ -34,8 +33,7 @@ def userPage():
     elif usr_input == 2:
         learnSkillPage()
     elif usr_input == 3:
-        #temporary till actual login function page is available
-        underConstruction()
+        login()
     else:
         print("\nPlease enter a valid input\n")
         userPage()

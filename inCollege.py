@@ -1,6 +1,6 @@
 from authorization import isAuthorized
 from add_user import canAdd, addUser
-
+from user_page import userPage
 
 
 def login():
@@ -8,8 +8,8 @@ def login():
     password = input("Password: ")
     next = isAuthorized(username, password)
     if (next):
-        ##### INSERT OPTIONS HERE #####
         print('working')
+        userPage()
     else:
         print("Login failed...")
         print("Please try again")

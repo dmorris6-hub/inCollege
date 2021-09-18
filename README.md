@@ -1,8 +1,10 @@
 # inCollege
 For the inCollege app from team Michigan
 
-*We're using postgresql
+*To use inCollege run
+python inCollege.py
 
+*We're using postgresql
 Create database type:
 CREATE DATABASE incollege;
 

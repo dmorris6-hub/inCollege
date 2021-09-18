@@ -2,7 +2,7 @@ from authorization import isAuthorized
 from add_user import canAdd, addUser
 from user_page import userPage
 
-
+# Handles logins 
 def login():
     username = input("Username: ")
     password = input("Password: ")
@@ -15,9 +15,9 @@ def login():
         print("Please try again")
         login()
 
-
+# handles signups
 def signup():
-    if(canAdd()):
+    if(canAdd()): 
         addUser()
         return 1
     else:
@@ -35,6 +35,7 @@ def main():
     option = input()
     convert = str(option).lower()
 
+    # interprests user input
     if (convert == "login"):
         login()
     elif (convert == "signup"):
@@ -47,7 +48,6 @@ def main():
     else:
         print("Invalid option")
         main()
-
 
 
 if __name__ == "__main__":

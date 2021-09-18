@@ -1,6 +1,6 @@
 from db_connection import db_conn
 
-
+# Checks if there is room for a new account
 def canAdd():
     conn = db_conn()
     # Open a cursor to perform database operations
@@ -16,7 +16,7 @@ def canAdd():
     else:
         return 1
 
-
+# Adds user to the database
 def addUser():
     username = input("Enter a username: ")
     password = input("Enter a password: ")

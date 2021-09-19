@@ -1,5 +1,4 @@
-import psycopg2
-from db_connection import db_conn
+
 
 # Checks if the username and password exsist in the db
 def isAuthorized(username, password):
@@ -15,3 +14,8 @@ def isAuthorized(username, password):
         return 0
     else:
         return 1
+
+
+
+import psycopg2
+from db_connection import db_conn

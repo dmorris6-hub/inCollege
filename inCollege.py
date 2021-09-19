@@ -1,9 +1,9 @@
 from authorization import isAuthorized
-from add_user import canAdd, addUser
-from user_page import userPage
+from add_user import canAdd, addUser, totalAccount
 
-# Handles logins 
+# Handles logins
 def login():
+    from user_page import userPage
     username = input("Username: ")
     password = input("Password: ")
     next = isAuthorized(username, password)
@@ -17,13 +17,13 @@ def login():
 
 # handles signups
 def signup():
-    if(canAdd()): 
+    response = totalAccount()
+    if(canAdd(response)): 
         addUser()
         return 1
     else:
         print("Sorry, we are at user capacity: (5/5)")
         return 0
-
 
 def main():
     print(" ")
@@ -49,6 +49,8 @@ def main():
         print("Invalid option")
         main()
 
-
 if __name__ == "__main__":
     main()
+
+
+

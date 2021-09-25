@@ -11,7 +11,7 @@ def login():
     next = isAuthorized(username, password)
     if (next):
         print('working')
-        userPage()
+        userPage(username)
     else:
         print("Login failed...")
         print("Please try again")

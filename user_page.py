@@ -1,4 +1,5 @@
 from inCollege import login
+from intership_page import jobSearch
 
 """
 under construction function to print
@@ -17,13 +18,14 @@ learn a new skill
 find someone you know
 log out
 """
-def userPage():
+def userPage(userName):
 
     print("-----------------------------------------")
     print("Please select one of the three options")
     print("1.   Find someone you know")
     print("2.   Learn a skill")
     print("3.   Log out")
+    print("4.   job Search")
     print("-----------------------------------------")
 
     usr_input = int(input("Please enter your selection:\t"))
@@ -34,6 +36,8 @@ def userPage():
         learnSkillPage()
     elif usr_input == 3:
         login()
+    elif usr_input == 4:
+        jobSearch(userName)
     else:
         print("\nPlease enter a valid input\n")
         userPage()
@@ -52,7 +56,7 @@ def findSomeonePage():
 This page gives the user 5 skills to learn and gives the option to 
 return back to the userPage
 """
-def learnSkillPage():
+def learnSkillPage(userName):
     print("\n\n-----------------------------------------")
     print("Choose a new skill to learn")
     print("1.   Coding skills")
@@ -82,7 +86,7 @@ def learnSkillPage():
         learnSkillPage()
     elif usr_input == 6:
         print("Returning...")
-        userPage()
+        userPage(userName)
     else:
         print("Please enter a valid input")
         learnSkillPage()

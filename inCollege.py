@@ -1,5 +1,7 @@
 from authorization import isAuthorized
 from add_user import canAdd, addUser, totalAccount
+from find_user import findUser
+
 
 # Handles logins
 def login():
@@ -15,19 +17,30 @@ def login():
         print("Please try again")
         login()
 
+
 # handles signups
 def signup():
     response = totalAccount()
     if(canAdd(response)): 
         addUser()
-        return 1
+        print("Thank you for signing up!")
+        print("Now log in with your new username and password")
+        login()
     else:
-        print("Sorry, we are at user capacity: (5/5)")
-        return 0
+        print("All permitted accounts have been created, please come back later")
+        
 
 def main():
     print(" ")
     print("---welcome to inCollege!---")
+    print(" ")
+    print("My Story:")
+    print("I had a low GPA and no experience while in college. My LinkedIn profile was blank because I hadn't done anything yet. That was until I found inCollege!")
+    print("Now I have a job and can start paying by my student loans. Thanks inCollege!")
+    print(" ")
+    print("To see my story type 'video'")
+    print(" ")
+    print("Connect with others type 'connect'")
     print(" ")
     print("Please type 'login' to log in to your account")
     print("or type 'signup' to create a new account")
@@ -39,15 +52,29 @@ def main():
     if (convert == "login"):
         login()
     elif (convert == "signup"):
-        if (signup()):
-            print("Thank you for signing up!")
-            print("Now log in with your new username and password")
-            login()
+        signup()
+    elif (convert == "video"):
+        print("Video is now playing")
+        main()
+    elif (convert == "connect"):
+        first = input("Enter their first name: ")
+        last = input("Enter their last name: ")
+        if (findUser(first, last)):
+            print("They are a part of the InCollege system")
+            print("Type 'login' to login or 'signup' to signup: ")
+            ls = input()
+            conv = str(ls).lower()
+            if (conv == "signup"):
+                signup()
+            else:
+                login()
         else:
+            print("They are not yet a part of the InCollege system yet")
             main()
     else:
         print("Invalid option")
         main()
+
 
 if __name__ == "__main__":
     main()

@@ -1,7 +1,8 @@
+from db_connection import db_conn
 
 # Checks if there is room for a new account
 def canAdd(response):
-    print(response)
+    # print(response)
     if (response[0][0] > 4):
         return 0
     else:
@@ -13,7 +14,7 @@ def totalAccount():
     cur = conn.cursor()
 
     # counts number of users
-    cur.execute(f"SELECT COUNT(*) FROM auth;")
+    cur.execute("SELECT COUNT(*) FROM auth;")
     return cur.fetchall()
 
 def validatePassword(password): 
@@ -39,6 +40,8 @@ def validatePassword(password):
 def addUser():
     username = input("Enter a username: ")
     password = input("Enter a password: ")
+    first = input("First Name: ")
+    last = input("Last Name: ")
 
     # finds out if password is allowed
     if (validatePassword(password) == 1):
@@ -47,8 +50,8 @@ def addUser():
         cur = conn.cursor()
 
         # insert user info
-        query = f"INSERT INTO auth (username, password) VALUES ('{username}', '{password}');"
-        cur.execute(query, (username, password))
+        query = f"INSERT INTO auth (username, password, first_name, last_name) VALUES ('{username}', '{password}', '{first}', '{last}');"
+        cur.execute(query, (username, password, first, last))
         conn.commit()
         return 1
     else:
@@ -56,7 +59,6 @@ def addUser():
         addUser()
 
 
-from db_connection import db_conn
 
 
 

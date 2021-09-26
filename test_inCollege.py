@@ -3,6 +3,9 @@ from authorization import isAuthorized
 from add_user import validatePassword, canAdd
 
 
+#should be able to run with py.test in terminal, add -v to see 
+
+
 #check if isAuthorize correctly detects account already exists in the database
 #for accounts that return 1, change the username and password into what you have in your database
 @pytest.mark.parametrize('username, password, result',

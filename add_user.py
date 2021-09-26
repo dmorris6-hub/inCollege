@@ -50,7 +50,7 @@ def addUser():
         cur = conn.cursor()
 
         # insert user info
-        query = f"INSERT INTO auth (username, password, first_name, last_name) VALUES ('{username}', '{password}', '{first}', '{last}');"
+        query = f'INSERT INTO auth (username, password, first_name, last_name) VALUES ("{username}", "{password}", "{first}", "{last}");'
         cur.execute(query, (username, password, first, last))
         conn.commit()
         return 1

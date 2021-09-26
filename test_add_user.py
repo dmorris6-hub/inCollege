@@ -2,16 +2,26 @@ import pytest
 from add_user import validatePassword, canAdd
 
 #this function checks if the password is valid
-def test_validatePassword():
-    #invalid password
-    assert(validatePassword('1232') == 0)
-    assert(validatePassword('abcdef') == 0)
-    assert(validatePassword('abc123') == 0)
+@pytest.mark.parametrize('password, result',
+                         [
+                            #invalid passwords
+                            ('1232', 0),
+                            ('2_Shor!', 0),
+                            ('abcdefg8!', 0),
+                            ('TooLong_Pa55word',0),
+                            ('missingcap1!',0),
+                            ('No-nonAlph5',0),
+                            ('',0),                            
+                            #valid passwords
+                            ('Mark@1234',1),
+                            ('aneSsa.9',1),
+                            ('h0uS2@jd',1),
 
-    #valid password
-    assert(validatePassword('Mark@1234') == 1)
-    assert(validatePassword('aneSsa.9') == 1)
-    assert(validatePassword('h0uS2@jd') == 1)
+                         ]
+                         )
+def test_validatePassword(password, result):
+    assert validatePassword(password) == result
+
 
 
 #this function checks if user can sign up based on the number of accounts in the database

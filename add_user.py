@@ -31,7 +31,7 @@ def validatePassword(password):
         else:
             continue
     
-    if (cap and dig and alp and len(password)>=8 and len(password)<=16):
+    if (cap and dig and alp and len(password)>=8 and len(password)<=12):
         return 1
     else:
         return 0

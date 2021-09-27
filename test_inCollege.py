@@ -1,6 +1,7 @@
 import pytest
 from authorization import isAuthorized
 from add_user import validatePassword, canAdd
+from find_user import findUser
 
 
 #should be able to run with py.test in terminal, add -v to see 
@@ -26,6 +27,22 @@ from add_user import validatePassword, canAdd
 def test_isAuthorized(username, password, result):
     assert isAuthorized(username, password) == result
 
+@pytest.mark.parametrize('first, last, result',
+    #return 0 if user is not found
+    [
+                            ('anessa23', 'An23@abc1', 0),
+                            ('jim2301', 'Jim@2a53f', 0),
+                            ('panther902', 'P4na3.def', 0),
+                            ('kelly324', 'kElly34.xyz',0),
+    #return 1 if user is found
+    #Change these values into any account you have in your database
+    #Or sign up with these accounts before testing
+                            ('kevin23', 'Keva.2421',1),
+                            ('nhi34', 'Nhi@nguyen35',1)                   
+    ]
+)
+def test_find_user(first,last, result):
+    assert findUser(first,last) == result
 
 
 #this function checks if the password is valid

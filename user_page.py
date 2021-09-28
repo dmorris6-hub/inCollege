@@ -6,9 +6,10 @@ under construction function to print
 under construction for functions 
 that are under construction
 """
+
+
 def underConstruction():
     print("\nThis option is Under Construction\nReturning...")
-
 
 
 """
@@ -18,6 +19,8 @@ learn a new skill
 find someone you know
 log out
 """
+
+
 def userPage(userName):
 
     print("-----------------------------------------")
@@ -43,19 +46,22 @@ def userPage(userName):
         userPage()
 
 
-    
-
 """
 Page under construction
 """
+
+
 def findSomeonePage():
     underConstruction()
     userPage()
+
 
 """
 This page gives the user 5 skills to learn and gives the option to 
 return back to the userPage
 """
+
+
 def learnSkillPage(userName):
     print("\n\n-----------------------------------------")
     print("Choose a new skill to learn")
@@ -90,5 +96,3 @@ def learnSkillPage(userName):
     else:
         print("Please enter a valid input")
         learnSkillPage()
-
-

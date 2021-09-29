@@ -36,7 +36,7 @@ def userPage(userName):
     if usr_input == 1:
         findSomeonePage()
     elif usr_input == 2:
-        learnSkillPage()
+        learnSkillPage(userName)
     elif usr_input == 3:
         login()
     elif usr_input == 4:

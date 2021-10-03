@@ -1,7 +1,7 @@
 from authorization import isAuthorized
 from add_user import canAdd, addUser, totalAccount
 from find_user import findUser
-from navigation_links import usefulLink, importantLink
+from navigation_links import usefulLink, importantLink, general
 
 # Handles logins
 

@@ -17,7 +17,7 @@ def general():
     elif (option == "3"):
 
         print("\nWelcome to InCollege, the world's largest college student netwoek with many users " +
-              "in manycountries and territories worldwide.\n")
+              "in many countries and territories worldwide.\n")
 
     elif (option == "4"):
         print("\nIn College Pressroom: Stay on top of the lastest news, updates, and reports.\n")

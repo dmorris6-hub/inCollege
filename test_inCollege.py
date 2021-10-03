@@ -3,8 +3,19 @@ from authorization import isAuthorized
 from add_user import validatePassword, canAdd
 from find_user import findUser
 
+#run with py.test in terminal,
+#add -v to see more detailed information about the tests
 
-#should be able to run with py.test in terminal, add -v to see 
+#################################### Week 3 testing ######################################
+
+
+
+
+
+
+
+##########################################################################################
+
 
 
 #check if isAuthorize correctly detects account already exists in the database

@@ -5,7 +5,6 @@ from navigation_links import usefulLink, importantLink, general
 
 # Handles logins
 
-
 def login():
     from user_page import userPage
     username = input("Username: ")
@@ -21,6 +20,7 @@ def login():
         if (option == "1"):
             usefulLink()
         elif (option == "2"):
+            print(username)
             importantLink(username)
         else:
             userPage(username)
@@ -54,7 +54,7 @@ def main():
     if choice == "1":
         usefulLink()
     elif choice == "2":
-        importantLink(None)
+        importantLink("None")
     elif choice == "3":
         print("My Story:")
         print("I had a low GPA and no experience while in college. My LinkedIn profile was blank because I hadn't done anything yet. That was until I found inCollege!")
